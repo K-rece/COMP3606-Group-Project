@@ -1,0 +1,53 @@
+package com.example.comp;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MainActivity extends AppCompatActivity {
+    private Button submitUsername;
+
+    private EditText userName;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        WindowCompat.enableEdgeToEdge(getWindow());
+        setContentView(R.layout.activity_main);
+
+        SmsPermissions.request(this);   // Member 1: ask for SMS permissions on first launch
+
+        submitUsername = findViewById(R.id.submitUsername);
+        userName = findViewById(R.id.userName);
+
+        submitUsername.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotToHomeScreen();
+            }
+        });
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+    }
+
+    public void gotToHomeScreen() {
+        String nameString = userName.getText().toString();
+        UserProfile.saveName(this, nameString);   // Member 1: saved so SMS texts use the real name
+        Intent intent = new Intent(this, HomeActivity.class);
+        intent.putExtra("USER_NAME", nameString);
+
+        startActivity(intent);
+    }
+}

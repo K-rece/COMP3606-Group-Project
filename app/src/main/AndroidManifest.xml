@@ -30,6 +30,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddEditAssignmentActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />

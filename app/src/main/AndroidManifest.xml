@@ -30,33 +30,41 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddEditAssignmentActivity"
+            android:name=".HomeActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize"/>
         <activity
-            android:name=".AssignmentDetailActivity"
+            android:name=".AddAssignmentActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".BuddiesActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".LeaderboardActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".MessageLogActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <receiver
-            android:name=".SmsReceiver"
-            android:exported="true"
-            android:permission="android.permission.BROADCAST_SMS">
-            <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
-            </intent-filter>
-        </receiver>
+            android:windowSoftInputMode="adjustResize"/>
+<!--        <activity-->
+<!--            android:name=".AddEditAssignmentActivity"-->
+<!--            android:exported="false"-->
+<!--            android:windowSoftInputMode="adjustResize" />-->
+<!--        <activity-->
+<!--            android:name=".AssignmentDetailActivity"-->
+<!--            android:exported="false"-->
+<!--            android:windowSoftInputMode="adjustResize" />-->
+<!--        <activity-->
+<!--            android:name=".BuddiesActivity"-->
+<!--            android:exported="false"-->
+<!--            android:windowSoftInputMode="adjustResize" />-->
+<!--        <activity-->
+<!--            android:name=".LeaderboardActivity"-->
+<!--            android:exported="false"-->
+<!--            android:windowSoftInputMode="adjustResize" />-->
+<!--        <activity-->
+<!--            android:name=".MessageLogActivity"-->
+<!--            android:exported="false"-->
+<!--            android:windowSoftInputMode="adjustResize" />-->
+<!--        <receiver-->
+<!--            android:name=".SmsReceiver"-->
+<!--            android:exported="true"-->
+<!--            android:permission="android.permission.BROADCAST_SMS">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
     </application>
 
 </manifest>

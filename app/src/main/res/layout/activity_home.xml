@@ -25,11 +25,13 @@
         tools:layout_editor_absoluteY="3dp" />
 
     <TextView
+        android:id="@+id/welcomeUserText"
+
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="74dp"
         android:layout_marginEnd="-12dp"
         android:padding="12dp"
         android:text="Welcome Username"
@@ -64,26 +66,30 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="263dp"
-        android:layout_marginBottom="414dp"
+        android:layout_marginStart="129dp"
+        android:layout_marginBottom="144dp"
         android:backgroundTint="@android:color/holo_orange_light"
         android:text="+ Add" />
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+    <Spinner
+        android:id="@+id/assignmentSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="22pt"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="340dp"
-        android:layout_marginEnd="-15dp"
-        android:padding="12dp"
-        android:text="No Assignments.."
-        android:textColor="@android:color/darker_gray"
-        android:textSize="70px"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="118dp" />
+        android:layout_marginTop="339dp"
+        android:layout_marginEnd="0dp" />
+
+    <TextView
+        android:id="@+id/countdownView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="296dp"
+        android:text="No assignment selected"
+        android:textSize="10pt" />
 
 
 </RelativeLayout>

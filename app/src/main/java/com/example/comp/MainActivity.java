@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         WindowCompat.enableEdgeToEdge(getWindow());
         setContentView(R.layout.activity_main);
 
+        SmsPermissions.request(this);   // Member 1: ask for SMS permissions on first launch
+
         submitUsername = findViewById(R.id.submitUsername);
         userName = findViewById(R.id.userName);
 
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void gotToHomeScreen() {
         String nameString = userName.getText().toString();
+        UserProfile.saveName(this, nameString);   // Member 1: saved so SMS texts use the real name
         Intent intent = new Intent(this, HomeActivity.class);
         intent.putExtra("USER_NAME", nameString);
 

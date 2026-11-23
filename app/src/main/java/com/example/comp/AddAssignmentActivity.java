@@ -15,6 +15,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
+import com.example.comp.model.Assignment;
+import com.example.comp.model.Milestone;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -92,11 +94,19 @@ public class AddAssignmentActivity extends AppCompatActivity {
             return;
         }
 
-        int progress = Integer.parseInt(questions);
-        Assignment a = new Assignment(title, course, dueMillis, progress);
+        int questionTotal = Integer.parseInt(questions);
+        if (questionTotal <= 0) {
+            questionCount.setError("Must be at least 1");
+            return;
+        }
+
+        Assignment a = new Assignment(title, course, dueMillis, 10); // 10 = points for now
+        for (int i = 1; i <= questionTotal; i++) {
+            a.addMilestone(new Milestone("Question " + i));
+        }
 
         Intent intent = new Intent();
-        intent.putExtra("ASSIGNMENT",a);
+        intent.putExtra("ASSIGNMENT", a);
         setResult(RESULT_OK, intent);
         finish();
     }
